@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='results.css') }}">
+    <title>Stock Info</title>
+</head>
+<body>
+    <h1>Stock Information</h1>
+
+    <div class="info-container">
+        <article>
+            <h4>Current Stock Price</h4>
+            <h6>Live stock price ($)</h6>
+            <p>{{ results[0] }}</p>
+        </article>
+
+        <article>
+            <h4>SMA with a 20 window</h4>
+            <h6> 20-day Simple Moving Average</h6>
+            <p>{{ results[1] }}</p>
+        </article>
+    </div>
+
+    <div class="info-container">
+        <article>
+            <h4>EMA with a 20 window</h4>
+            <h6> 20-day Exponential Moving Average</h6>
+            <p>{{ results[2] }}</p>
+        </article>
+
+        <article>
+            <h4>RSI</h4>
+            <h6>Relative Strength Index</h6>
+            <p>{{ results[3] }}</p>
+        </article>
+    </div>
+    
+    <div class="info-container">
+        <article>
+            <h4>MACD</h4>
+            <h6>Moving Average Convergence Divergence</h6>
+            <p>{{ results[4] }}</p>
+        </article>
+        <article>
+            <h4>Plot graph</h4>
+            <h6>The graph of stock in the past year</h6>
+            <img src="{{ url_for('static', filename='stock.png') }}" alt="Stock Price Plot" width="300" height="210">
+        </article>
+    </div>
+
+    {% if sentiment_data %}
+    <div class="info-container">
+        <article>
+            <h4>News Sentiment Analysis</h4>
+            <h6>Based on recent news articles</h6>
+            <p>Average Sentiment: {{ sentiment_data.average_sentiment | round(2) }}</p>
+            <p>Articles Analyzed: {{ sentiment_data.article_count }}</p>
+        </article>
+    </div>
+    <div class="headlines">
+        <h4>Recent Headlines:</h4>
+        <ul>
+        {% for headline in sentiment_data.headlines %}
+            <li>{{ headline }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>
+
+
