@@ -1,17 +1,11 @@
-# FlockStock📈
+# Stock-Look
 
 ## Introduction
 
 This tool combines technical stock indicators with natural language processing to give users a holistic view of a stock's performance and public perception.
 
 ## Features 📚
-Our application includes:
-- Extraction of real time stock prices
-- Calculate Simple Moving Averages (SMA) and Exponential Moving Averages (EMA)
-- Compute the Relative Strength Index (RSI) to assess the stock's momentum
-- Calculate the Moving Average Convergence Divergence (MACD)
-- Visualize stock price trends with interactive charts
-- AI Advise on investment of the stock
+The application features real-time stock price extraction, calculates SMA, EMA, RSI, and MACD for stock analysis, provides interactive trend visualization, and offers AI-driven investment advice.
 
 ## Getting Started 🏁
 
@@ -36,7 +30,7 @@ Follow these steps to set up and run the FlockStock web application locally:
 
 ## Usage 🧐
 
-Enter a stock ticker symbol (e.g., MSFT) in the input field.
+Enter a stock ticker symbol (e.g., ATLS) in the input field.
 The application would return detailed information about the stock and advise on whether the user should consider buying the stock. 
 
 ## License 🪪
